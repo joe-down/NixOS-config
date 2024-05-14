@@ -114,16 +114,10 @@
                       pkgs.jetbrains.idea-ultimate
                       pkgs.bottles
                       # pkgs.minecraft
-                      pkgs.kate
-                      pkgs.yakuake
-                      pkgs.kile
                       pkgs.gimp
                       pkgs.godot_4
                       pkgs.retroarch
-                      pkgs.qpwgraph
                       pkgs.python3
-                      pkgs.kdenlive
-                      pkgs.sddm-kcm
                       pkgs.bitwarden
                       # kdenlive
                       pkgs.kdenlive
@@ -131,17 +125,10 @@
                       # Other
                       pkgs.krita
                       pkgs.blender
-                      pkgs.kmail
-                      pkgs.kcalc
-                      pkgs.filelight
-                      pkgs.ksystemlog
-                      pkgs.kompare
-                      pkgs.ktorrent
-                      pkgs.kget
-                      pkgs.kile
                       pkgs.micromamba
                     ];
     programs.bash.enable = true;
+    
     programs.firefox = {
       enable = true;
       profiles.joe = {
@@ -152,6 +139,7 @@
                  };
       };
     };
+    
     programs.chromium = {
       enable = true;
     };
@@ -179,9 +167,11 @@
       enable = true;
       plugins = [];
     };
+    
     programs.texlive = {
       enable = true;
     };
+    
     # The state version is required and should stay at the version you
     # originally installed.
     home.stateVersion = "23.11";
