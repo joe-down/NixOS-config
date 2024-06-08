@@ -2,7 +2,11 @@
 
 {
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
   services.desktopManager.plasma6.enable = true;
   
   home-manager.users.joe = { pkgs, ... }: {
@@ -20,6 +24,7 @@
                       pkgs.ktorrent
                       pkgs.kget
                       pkgs.kile
+                      pkgs.discover
                     ];
   };
 }

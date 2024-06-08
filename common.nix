@@ -126,6 +126,8 @@
                       pkgs.krita
                       pkgs.blender
                       pkgs.micromamba
+                      pkgs.lutris
+                      pkgs.heroic
                     ];
     programs.bash.enable = true;
     
@@ -216,9 +218,10 @@
   };
 
   programs.steam = {
-    enable = true;
+    enable = false;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
+    gamescopeSession.enable = true;
     package = pkgs.steam.override {
       extraEnv = {
         MANGOHUD = true;
@@ -228,6 +231,7 @@
       ];
     };
   };
+  hardware.steam-hardware.enable = true;
 
   programs.gamemode = {
     enable = true;
@@ -262,5 +266,9 @@
       runAsRoot = true;
     };
   };
+  virtualisation.waydroid.enable = true;
+
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
 
 }

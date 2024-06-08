@@ -5,6 +5,7 @@
     [
       ./common.nix
       ./kde.nix
+      ./amd_cpu.nix
     ];
 
   networking.hostName = "joe-desktop"; # Define your hostname.
@@ -41,4 +42,8 @@
   };
 
   programs.dconf.enable = true;
+
+  environment.variables = {
+    VK_DRIVER_FILES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";
+  };
 }
