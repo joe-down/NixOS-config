@@ -41,7 +41,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.firewall.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -244,6 +243,7 @@
   };
 
   networking.firewall = {
+   enable = true;
    # if packets are still dropped, they will show up in dmesg
    logReversePathDrops = true;
    # wireguard trips rpfilter up
@@ -255,6 +255,12 @@
      ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN || true
      ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN || true
    '';
+   allowedTCPPortRanges = [
+     { from = 1714; to = 1764; } # kdeconnect
+   ];
+   allowedUDPPortRanges = [
+     { from = 1714; to = 1764; } # kdeconnect
+   ];
   };
 
   programs.virt-manager.enable = true;
