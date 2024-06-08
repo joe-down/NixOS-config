@@ -8,6 +8,7 @@
   home-manager.users.joe = { pkgs, ... }: {
     home.packages = [
                       pkgs.gnome-latex
+                      pkgs.gnome.gnome-software
                     ];
   
     services.kdeconnect = {
