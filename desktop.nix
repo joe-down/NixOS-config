@@ -32,8 +32,7 @@
   };
 
  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 64*1024;
+    device = "/swap/swapfile";
   } ];
 
   services.hardware.openrgb = {
@@ -42,4 +41,16 @@
   };
 
   programs.dconf.enable = true;
+
+  boot.extraModprobeConfig = ''
+    options snd_hda_intel power_save=0 # soundblaster crackle fix
+  '';
+
+  home-manager.users.joe = { pkgs, ... }: {
+    programs.bash = {
+      shellAliases = {
+        "import-roms" = "git -C /mnt/hdd/ROMs/libretro-database/ pull && igir move zip test clean --dat /mnt/hdd/ROMs/libretro-database/metadat/*{redump,no-intro}*/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
+      };
+    };
+  };
 }

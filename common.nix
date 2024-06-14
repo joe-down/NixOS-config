@@ -117,7 +117,6 @@
                       # pkgs.minecraft
                       pkgs.gimp
                       pkgs.godot_4
-                      pkgs.retroarch
                       pkgs.python3
                       pkgs.bitwarden
                       # kdenlive
@@ -129,8 +128,30 @@
                       pkgs.micromamba
                       pkgs.lutris
                       pkgs.heroic
+                      pkgs.igir
+                      (pkgs.retroarch.override {
+                        cores = with pkgs.libretro; [
+                          dolphin
+                          melonds
+                          desmume
+                          mupen64plus
+                          parallel-n64
+                          mgba
+                          citra
+                          ppsspp
+                          play
+                        ];
+                      })
                     ];
-    programs.bash.enable = true;
+
+    programs.bash = {
+      enable = true;
+      shellAliases = {
+        "raspberrypi" = "ssh joe@joe-raspberrypi.local";
+        "upgrade-system" = "sudo nixos-rebuild switch --upgrade-all";
+      };
+    };
+
     
     programs.firefox = {
       enable = true;
@@ -278,5 +299,7 @@
 
   services.flatpak.enable = true;
   xdg.portal.enable = true;
-
+  services.xserver.desktopManager.retroarch = {
+    enable = true;
+  };
 }
