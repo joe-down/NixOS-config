@@ -52,5 +52,13 @@
         "import-roms" = "git -C /mnt/hdd/ROMs/libretro-database/ pull && igir move zip test clean --dat /mnt/hdd/ROMs/libretro-database/metadat/*{redump,no-intro}*/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
       };
     };
+
+    programs.beets = {
+      enable = true;
+      settings = {
+        directory = "/mnt/hdd/Music/Music/";
+        library = "/mnt/hdd/Music/Beets/musiclibrary.db";
+      };
+    };
   };
 }

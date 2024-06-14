@@ -151,11 +151,6 @@
         "upgrade-system" = "sudo nixos-rebuild switch --upgrade-all";
       };
     };
-
-    programs.beets = {
-      enable = true;
-    };
-
     
     programs.firefox = {
       enable = true;
