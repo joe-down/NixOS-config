@@ -128,6 +128,7 @@
                       pkgs.micromamba
                       pkgs.lutris
                       pkgs.heroic
+                      pkgs.picard
                       pkgs.igir
                       (pkgs.retroarch.override {
                         cores = with pkgs.libretro; [
