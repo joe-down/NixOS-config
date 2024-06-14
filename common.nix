@@ -128,7 +128,6 @@
                       pkgs.micromamba
                       pkgs.lutris
                       pkgs.heroic
-                      pkgs.picard
                       pkgs.igir
                       (pkgs.retroarch.override {
                         cores = with pkgs.libretro; [
@@ -151,6 +150,10 @@
         "raspberrypi" = "ssh joe@joe-raspberrypi.local";
         "upgrade-system" = "sudo nixos-rebuild switch --upgrade-all";
       };
+    };
+
+    programs.beets = {
+      enable = true;
     };
 
     
