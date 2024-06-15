@@ -193,6 +193,7 @@
     
     programs.texlive = {
       enable = true;
+      extraPackages = tpkgs: { inherit (tpkgs) scheme-basic; };
     };
     
     # The state version is required and should stay at the version you
