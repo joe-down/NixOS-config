@@ -147,8 +147,8 @@
     programs.bash = {
       enable = true;
       shellAliases = {
-        "raspberrypi" = "ssh joe@joe-raspberrypi.local";
-        "upgrade-system" = "sudo nixos-rebuild switch --upgrade-all";
+        "joe-raspberrypi" = "ssh joe@joe-raspberrypi.local";
+        "joe-upgrade-system" = "sudo nixos-rebuild switch --upgrade-all";
       };
     };
     

@@ -49,7 +49,7 @@
   home-manager.users.joe = { pkgs, ... }: {
     programs.bash = {
       shellAliases = {
-        "import-roms" = "git -C /mnt/hdd/ROMs/libretro-database/ pull && igir move zip test clean --dat /mnt/hdd/ROMs/libretro-database/metadat/*{redump,no-intro}*/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
+        "joe-import-roms" = "git -C /mnt/hdd/ROMs/libretro-database/ pull && igir move zip test clean --dat /mnt/hdd/ROMs/libretro-database/metadat/*{redump,no-intro}*/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
       };
     };
 
@@ -58,6 +58,7 @@
       settings = {
         directory = "/mnt/hdd/Music/Music/";
         library = "/mnt/hdd/Music/Beets/musiclibrary.db";
+        plugins = "chroma fetchart mbsync";
       };
     };
   };
