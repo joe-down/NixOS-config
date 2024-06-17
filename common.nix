@@ -148,7 +148,8 @@
       enable = true;
       shellAliases = {
         "joe-raspberrypi" = "ssh joe@joe-raspberrypi.local";
-        "joe-upgrade-system" = "sudo nixos-rebuild switch --upgrade-all";
+        "joe-rebuild-switch" = "sudo nixos-rebuild switch --upgrade-all";
+        "joe-rebuild-boot" = "sudo nixos-rebuild boot --upgrade-all";
       };
     };
     

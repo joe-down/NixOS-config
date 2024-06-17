@@ -58,7 +58,7 @@
       settings = {
         directory = "/mnt/hdd/Music/Music/";
         library = "/mnt/hdd/Music/Beets/musiclibrary.db";
-        plugins = "chroma fetchart mbsync";
+        plugins = "chroma fetchart mbsync web";
       };
     };
   };
