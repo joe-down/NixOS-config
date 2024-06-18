@@ -42,10 +42,6 @@
 
   programs.dconf.enable = true;
 
-  boot.extraModprobeConfig = ''
-    options snd_hda_intel power_save=0 # soundblaster crackle fix
-  '';
-
   home-manager.users.joe = { pkgs, ... }: {
     programs.bash = {
       shellAliases = {
