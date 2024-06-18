@@ -26,6 +26,7 @@
       "webstorm"
       "idea-ultimate"
       "minecraft-launcher"
+      "osu-lazer-bin"
     ];
 
   # Bootloader.
@@ -128,6 +129,7 @@
                       pkgs.micromamba
                       pkgs.lutris
                       pkgs.heroic
+                      pkgs.osu-lazer-bin
                       pkgs.igir
                       (pkgs.retroarch.override {
                         cores = with pkgs.libretro; [
