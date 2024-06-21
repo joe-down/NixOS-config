@@ -107,32 +107,32 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.users.joe = { pkgs, ... }: {
-    home.packages = [
-                      pkgs.spotify
-                      pkgs.discord
-                      pkgs.jetbrains.pycharm-professional
-                      pkgs.jetbrains.clion
-                      pkgs.jetbrains.webstorm
-                      pkgs.jetbrains.idea-ultimate
-                      pkgs.bottles
+    home.packages = with pkgs ; [
+                      spotify
+                      discord
+                      jetbrains.pycharm-professional
+                      jetbrains.clion
+                      jetbrains.webstorm
+                      jetbrains.idea-ultimate
+                      bottles
                       # pkgs.minecraft
-                      pkgs.gimp
-                      pkgs.godot_4
-                      pkgs.python3
-                      pkgs.bitwarden
+                      gimp
+                      godot_4
+                      python3
+                      bitwarden
                       # kdenlive
-                      pkgs.kdenlive
-                      pkgs.glaxnimate
+                      kdenlive
+                      glaxnimate
                       # Other
-                      pkgs.krita
-                      pkgs.blender
-                      pkgs.micromamba
-                      pkgs.lutris
-                      pkgs.heroic
-                      pkgs.osu-lazer-bin
-                      pkgs.igir
-                      (pkgs.retroarch.override {
-                        cores = with pkgs.libretro; [
+                      krita
+                      blender
+                      micromamba
+                      lutris
+                      heroic
+                      osu-lazer-bin
+                      igir
+                      (retroarch.override {
+                        cores = with libretro; [
                           dolphin
                           melonds
                           desmume
@@ -142,6 +142,8 @@
                           citra
                           ppsspp
                           play
+                          swanstation
+                          beetle-psx-hw
                         ];
                       })
                     ];
