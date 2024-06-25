@@ -6,9 +6,9 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   home-manager.users.joe = { pkgs, ... }: {
-    home.packages = [
-                      pkgs.gnome-latex
-                      pkgs.gnome.gnome-software
+    home.packages = with pkgs ; [
+                      gnome-latex
+                      gnome.gnome-software
                     ];
   
     services.kdeconnect = {

@@ -10,21 +10,23 @@
   services.desktopManager.plasma6.enable = true;
   
   home-manager.users.joe = { pkgs, ... }: {
-    home.packages = [
-                      pkgs.kate
-                      pkgs.yakuake
-                      pkgs.kile
-                      pkgs.qpwgraph
-                      pkgs.sddm-kcm
-                      pkgs.kmail
-                      pkgs.kcalc
-                      pkgs.filelight
-                      pkgs.ksystemlog
-                      pkgs.kompare
-                      pkgs.ktorrent
-                      pkgs.kget
-                      pkgs.kile
-                      pkgs.discover
+    home.packages = with pkgs ; [
+                      kate
+                      yakuake
+                      kile
+                      qpwgraph
+                      sddm-kcm
+                      kmail
+                      kcalc
+                      filelight
+                      ksystemlog
+                      kompare
+                      ktorrent
+                      kget
+                      kile
+                      discover
+                      aspellDicts.en
+                      aspellDicts.en-computers
                     ];
   };
 }

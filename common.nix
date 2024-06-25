@@ -131,6 +131,7 @@
                       heroic
                       osu-lazer-bin
                       igir
+                      vlc
                       (retroarch.override {
                         cores = with libretro; [
                           dolphin
@@ -307,4 +308,5 @@
   services.xserver.desktopManager.retroarch = {
     enable = true;
   };
+  nix.settings.auto-optimise-store = true;
 }
