@@ -16,10 +16,9 @@
     "/mnt/hdd".options = [ "compress=zstd" ];
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   services.xserver.videoDrivers = ["nvidia"];
@@ -45,7 +44,7 @@
   home-manager.users.joe = { pkgs, ... }: {
     programs.bash = {
       shellAliases = {
-        "joe-import-roms" = "git -C /mnt/hdd/ROMs/libretro-database/ pull && igir move zip test clean --dat /mnt/hdd/ROMs/libretro-database/metadat/*{redump,no-intro}*/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
+        "joe-import-roms" = "igir move zip test clean --dat /mnt/hdd/ROMs/DATs/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
       };
     };
 
