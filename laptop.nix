@@ -11,4 +11,5 @@
   boot.initrd.luks.devices."luks-f14f0478-5671-497b-9d7f-cbab653ee2ac".device = "/dev/disk/by-uuid/f14f0478-5671-497b-9d7f-cbab653ee2ac";
   
   networking.hostName = "joe-laptop";
+  programs.steam.enable = true;
 }

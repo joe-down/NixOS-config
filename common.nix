@@ -246,7 +246,7 @@
   };
 
   programs.steam = {
-    enable = false;
+    #enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
@@ -303,7 +303,6 @@
   };
   virtualisation.waydroid.enable = true;
 
-  services.flatpak.enable = true;
   xdg.portal.enable = true;
   services.xserver.desktopManager.retroarch = {
     enable = true;
