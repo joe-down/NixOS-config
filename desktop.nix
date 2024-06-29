@@ -40,7 +40,7 @@
   };
 
   programs.dconf.enable = true;
-  services.flatpak.enable = true;
+  #services.flatpak.enable = true;
 
   home-manager.users.joe = { pkgs, ... }: {
     programs.bash = {
