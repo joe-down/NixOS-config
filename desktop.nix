@@ -58,4 +58,26 @@
       };
     };
   };
+
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+    shares = {
+      Audiobooks = {
+        path = "/mnt/hdd/Audiobooks/";
+      };
+      Books = {
+        path = "/mnt/hdd/Books/";
+      };
+      Comics = {
+        path = "/mnt/hdd/Comics/";
+      };
+      Music = {
+        path = "/mnt/hdd/Music/Music/";
+      };
+      ROMs = {
+        path = "/mnt/hdd/ROMs/ROMs/";
+      };
+    };
+  };
 }
