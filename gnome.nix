@@ -5,6 +5,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   programs.evince.enable = true;
+  services.switcherooControl.enable = true;
 
   home-manager.users.joe = { pkgs, ... }: {
     home.packages = with pkgs ; [
@@ -12,7 +13,7 @@
                       gnome.gnome-software
                       gnome.gnome-tweaks
                       plots
-                      gnomeExtensions.bluetooth-smart-lock
+                      gnomeExtensions.appindicator
                     ];
   
     services.kdeconnect = {
