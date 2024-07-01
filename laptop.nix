@@ -4,6 +4,7 @@
   imports =
     [
       <nixos-hardware/dell/xps/15-9500/nvidia>
+      ./nvidia.nix
       ./common.nix
       ./gnome.nix
     ];

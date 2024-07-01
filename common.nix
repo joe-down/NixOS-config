@@ -27,6 +27,24 @@
       "idea-ultimate"
       "minecraft-launcher"
       "osu-lazer-bin"
+      "blender"
+      # cuda
+      "cuda_cudart"
+      "cuda_cccl"
+      "libnpp"
+      "libcublas"
+      "libcufft"
+      "cuda_nvcc"
+      "cuda_cupti"
+      "cuda_nvml_dev"
+      "cuda_nvrtc"
+      "cuda_nvtx"
+      "libcurand"
+      "libcusolver"
+      "libnvjitlink"
+      "libcusparse"
+      "cudnn"
+      "cuda_profiler_api"
     ];
 
   # Bootloader.
