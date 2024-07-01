@@ -119,7 +119,10 @@
                       # pkgs.minecraft
                       gimp
                       godot_4
-                      python3
+                      (pkgs.python3.withPackages (python-pkgs: [
+                        python-pkgs.numpy
+                        python-pkgs.torch
+                      ]))
                       bitwarden
                       # kdenlive
                       kdenlive
