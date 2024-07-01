@@ -27,6 +27,7 @@
                       discover
                       aspellDicts.en
                       aspellDicts.en-computers
+                      xwaylandvideobridge
                     ];
   };
 }
