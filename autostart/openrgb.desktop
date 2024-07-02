@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=Utility;
+Comment[en_GB]=Control RGB lighting
+Comment=Control RGB lighting
+Encoding=UTF-8
+Exec=openrgb --startminimized --profile Full
+GenericName[en_GB]=
+GenericName=
+Icon=OpenRGB
+MimeType=
+Name[en_GB]=OpenRGB
+Name=OpenRGB
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,20 @@
+[Desktop Entry]
+Categories=AudioVideo;Audio;Video;Midi;X-Alsa;X-PipeWire;Qt;
+Comment[en_GB]=qpwgraph is a PipeWire graph Qt GUI interface
+Comment=qpwgraph is a PipeWire graph Qt GUI interface
+Exec=qpwgraph --minimized %f
+GenericName[en_GB]=PipeWire Graph/Patchbay
+GenericName=PipeWire Graph/Patchbay
+Icon=org.rncbc.qpwgraph
+Keywords=PipeWire;MIDI;ALSA;JACK;Qt;
+MimeType=application/x-qpwgraph-patchbay;
+Name[en_GB]=qpwgraph
+Name=qpwgraph
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-KDE-SubstituteUID=false
+X-KDE-Username=
