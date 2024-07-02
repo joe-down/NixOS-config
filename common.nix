@@ -45,6 +45,8 @@
       "libcusparse"
       "cudnn"
       "cuda_profiler_api"
+      "cuda_nvprof"
+      "libcutensor"
     ];
 
   # Bootloader.
@@ -139,6 +141,7 @@
                       godot_4
                       (pkgs.python3.withPackages (python-pkgs: [
                         python-pkgs.numpy
+                        #python-pkgs.cupy
                         python-pkgs.torch
                       ]))
                       bitwarden
@@ -273,6 +276,7 @@
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
     gamescopeSession.enable = true;
+    extest.enable = true;
     package = pkgs.steam.override {
       extraEnv = {
         MANGOHUD = true;
