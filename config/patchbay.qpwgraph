@@ -1,0 +1,14 @@
+<!DOCTYPE patchbay>
+<patchbay name="patchbay" version="0.6.1">
+ <items>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="USB Audio Line Input" port="USB Audio #1:capture_FL"/>
+   <input node="Easy Effects Sink" port="Easy Effects Sink:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="USB Audio Line Input" port="USB Audio #1:capture_FR"/>
+   <input node="Easy Effects Sink" port="Easy Effects Sink:playback_FR"/>
+  </item>
+ </items>
+</patchbay>
+

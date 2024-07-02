@@ -44,11 +44,12 @@
   #services.flatpak.enable = true;
 
   home-manager.users.joe = { pkgs, ... }: {
-    xdg.configFile."autostart/spotify.desktop".source = ./autostart/spotify.desktop;
-    xdg.configFile."autostart/discord.desktop".source = ./autostart/discord.desktop;
-    xdg.configFile."autostart/steam.desktop".source = ./autostart/steam.desktop;
-    xdg.configFile."autostart/qpwgraph.desktop".source = ./autostart/qpwgraph.desktop;
-    xdg.configFile."autostart/openrgb.desktop".source = ./autostart/openrgb.desktop;
+    xdg.configFile."autostart/spotify.desktop".source = ./config/autostart/spotify.desktop;
+    xdg.configFile."autostart/discord.desktop".source = ./config/autostart/discord.desktop;
+    xdg.configFile."autostart/steam.desktop".source = ./config/autostart/steam.desktop;
+    xdg.configFile."autostart/qpwgraph.desktop".source = ./config/autostart/qpwgraph.desktop;
+    xdg.configFile."autostart/openrgb.desktop".source = ./config/autostart/openrgb.desktop;
+    xdg.configFile."patchbay.qpwgraph".source = ./config/patchbay.qpwgraph;
     programs.bash = {
       shellAliases = {
         "joe-import-roms" = "igir move zip test clean --dat /mnt/hdd/ROMs/DATs/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
