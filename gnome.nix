@@ -11,7 +11,7 @@
     home.packages = with pkgs ; [
                       gnome-latex
                       gnome.gnome-software
-                      gnome.gnome-tweaks
+                      gnome-tweaks
                       plots
                       gnomeExtensions.appindicator
                     ];
