@@ -154,6 +154,7 @@
                       micromamba
                       lutris
                       heroic
+                      mangohud
                       osu-lazer-bin
                       igir
                       vlc
@@ -173,6 +174,8 @@
                         ];
                       })
                     ];
+
+    xdg.configFile."MangoHud/MangoHud.conf".source = ./config/MangoHud.conf;
 
     programs.bash = {
       enable = true;
@@ -281,9 +284,6 @@
       extraEnv = {
         MANGOHUD = true;
       };
-      extraLibraries = p: with p; [
-        mangohud
-      ];
     };
   };
   hardware.steam-hardware.enable = true;
