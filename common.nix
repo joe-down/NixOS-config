@@ -122,7 +122,7 @@
   users.users.joe = {
     isNormalUser = true;
     description = "Joe";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode"];
   };
 
   home-manager.useGlobalPkgs = true;
