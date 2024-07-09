@@ -136,7 +136,7 @@
                       jetbrains.webstorm
                       jetbrains.idea-ultimate
                       bottles
-                      # pkgs.minecraft
+                      #minecraft
                       gimp
                       godot_4
                       (pkgs.python3.withPackages (python-pkgs: [
@@ -145,9 +145,7 @@
                         python-pkgs.torch
                       ]))
                       bitwarden
-                      # kdenlive
                       kdenlive
-                      glaxnimate
                       # Other
                       krita
                       blender
