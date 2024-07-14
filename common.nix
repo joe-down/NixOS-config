@@ -122,7 +122,7 @@
   users.users.joe = {
     isNormalUser = true;
     description = "Joe";
-    extraGroups = [ "networkmanager" "wheel" "gamemode"];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "dialout"];
   };
 
   home-manager.useGlobalPkgs = true;
@@ -153,6 +153,7 @@
                       lutris
                       heroic
                       mangohud
+                      r2modman
                       osu-lazer-bin
                       igir
                       vlc
@@ -174,6 +175,7 @@
                     ];
 
     xdg.configFile."MangoHud/MangoHud.conf".source = ./config/MangoHud.conf;
+    xdg.configFile."gamemode.ini".source = ./config/gamemode.ini;
 
     programs.bash = {
       enable = true;
