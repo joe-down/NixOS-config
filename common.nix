@@ -334,4 +334,9 @@
     enable = true;
   };
   nix.settings.auto-optimise-store = true;
+  system.autoUpgrade = {
+    enable = true;
+    operation = "boot";
+    flags = ["--upgrade-all"];
+  };
 }
