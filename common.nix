@@ -125,7 +125,6 @@
   };
 
   home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
   home-manager.users.joe = { pkgs, ... }: {
     home.packages = with pkgs ; [
                       spotify
