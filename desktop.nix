@@ -17,6 +17,8 @@
     "/mnt/hdd".options = [ "compress=zstd" ];
   };
 
+  hardware.alsa.enablePersistence = true;
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
