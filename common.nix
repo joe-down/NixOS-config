@@ -139,7 +139,7 @@
                       godot_4
                       (pkgs.python3.withPackages (python-pkgs: [
                         python-pkgs.numpy
-                        #python-pkgs.cupy
+                        python-pkgs.cupy
                         python-pkgs.torch
                       ]))
                       bitwarden
