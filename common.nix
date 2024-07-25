@@ -28,6 +28,7 @@
       "minecraft-launcher"
       "osu-lazer-bin"
       "blender"
+      "xow_dongle-firmware"
       # cuda
       "cuda_cudart"
       "cuda_cccl"

@@ -24,6 +24,8 @@
     enable32Bit = true;
   };
 
+  hardware.xone.enable = true;
+
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
