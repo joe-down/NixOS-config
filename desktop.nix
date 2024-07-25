@@ -1,13 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports =
-    [
-      ./common.nix
-      ./kde.nix
-      ./amd_cpu.nix
-      ./nvidia.nix
-    ];
+  imports = [ ./common.nix ./kde.nix ./amd_cpu.nix ./nvidia.nix ];
 
   networking.hostName = "joe-desktop"; # Define your hostname.
 
@@ -26,7 +20,7 @@
 
   hardware.xone.enable = true;
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -35,9 +29,7 @@
     nvidiaPersistenced = true;
   };
 
- swapDevices = [ {
-    device = "/swap/swapfile";
-  } ];
+  swapDevices = [{ device = "/swap/swapfile"; }];
 
   services.hardware.openrgb = {
     enable = true;
@@ -48,15 +40,21 @@
   #services.flatpak.enable = true;
 
   home-manager.users.joe = { pkgs, ... }: {
-    xdg.configFile."autostart/spotify.desktop".source = ./config/autostart/spotify.desktop;
-    xdg.configFile."autostart/discord.desktop".source = ./config/autostart/discord.desktop;
-    xdg.configFile."autostart/steam.desktop".source = ./config/autostart/steam.desktop;
-    xdg.configFile."autostart/qpwgraph.desktop".source = ./config/autostart/qpwgraph.desktop;
-    xdg.configFile."autostart/openrgb.desktop".source = ./config/autostart/openrgb.desktop;
+    xdg.configFile."autostart/spotify.desktop".source =
+      ./config/autostart/spotify.desktop;
+    xdg.configFile."autostart/discord.desktop".source =
+      ./config/autostart/discord.desktop;
+    xdg.configFile."autostart/steam.desktop".source =
+      ./config/autostart/steam.desktop;
+    xdg.configFile."autostart/qpwgraph.desktop".source =
+      ./config/autostart/qpwgraph.desktop;
+    xdg.configFile."autostart/openrgb.desktop".source =
+      ./config/autostart/openrgb.desktop;
     xdg.configFile."patchbay.qpwgraph".source = ./config/patchbay.qpwgraph;
     programs.bash = {
       shellAliases = {
-        "joe-import-roms" = "igir move zip test clean --dat /mnt/hdd/ROMs/DATs/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
+        "joe-import-roms" =
+          "igir move zip test clean --dat /mnt/hdd/ROMs/DATs/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
       };
     };
 
@@ -74,21 +72,11 @@
     enable = true;
     openFirewall = true;
     shares = {
-      Audiobooks = {
-        path = "/mnt/hdd/Audiobooks/";
-      };
-      Books = {
-        path = "/mnt/hdd/Books/";
-      };
-      Comics = {
-        path = "/mnt/hdd/Comics/";
-      };
-      Music = {
-        path = "/mnt/hdd/Music/Music/";
-      };
-      ROMs = {
-        path = "/mnt/hdd/ROMs/ROMs/";
-      };
+      Audiobooks = { path = "/mnt/hdd/Audiobooks/"; };
+      Books = { path = "/mnt/hdd/Books/"; };
+      Comics = { path = "/mnt/hdd/Comics/"; };
+      Music = { path = "/mnt/hdd/Music/Music/"; };
+      ROMs = { path = "/mnt/hdd/ROMs/ROMs/"; };
     };
   };
 }

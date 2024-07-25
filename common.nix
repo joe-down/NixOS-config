@@ -1,11 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports =
-    [
-      ../hardware-configuration.nix
-      <home-manager/nixos>
-    ];
+  imports = [ ../hardware-configuration.nix <home-manager/nixos> ];
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
@@ -50,7 +46,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.plymouth.enable = true;
-  
+
   services.fwupd.enable = true;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -118,56 +114,53 @@
   users.users.joe = {
     isNormalUser = true;
     description = "Joe";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "dialout"];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "dialout" ];
   };
 
   home-manager.useGlobalPkgs = true;
   home-manager.users.joe = { pkgs, ... }: {
-    home.packages = with pkgs ; [
-                      spotify
-                      discord
-                      jetbrains.pycharm-professional
-                      jetbrains.clion
-                      jetbrains.webstorm
-                      jetbrains.idea-ultimate
-                      bottles
-                      #minecraft
-                      gimp
-                      godot_4
-                      (pkgs.python3.withPackages (python-pkgs: [
-                        python-pkgs.numpy
-                        python-pkgs.cupy
-                        python-pkgs.torch
-                      ]))
-                      bitwarden
-                      kdenlive
-                      # Other
-                      krita
-                      blender
-                      micromamba
-                      lutris
-                      heroic
-                      mangohud
-                      r2modman
-                      osu-lazer-bin
-                      igir
-                      vlc
-                      (retroarch.override {
-                        cores = with libretro; [
-                          dolphin
-                          melonds
-                          desmume
-                          mupen64plus
-                          parallel-n64
-                          mgba
-                          citra
-                          ppsspp
-                          play
-                          swanstation
-                          beetle-psx-hw
-                        ];
-                      })
-                    ];
+    home.packages = with pkgs; [
+      spotify
+      discord
+      jetbrains.pycharm-professional
+      jetbrains.clion
+      jetbrains.webstorm
+      jetbrains.idea-ultimate
+      bottles
+      #minecraft
+      gimp
+      godot_4
+      (pkgs.python3.withPackages
+        (python-pkgs: [ python-pkgs.numpy python-pkgs.cupy python-pkgs.torch ]))
+      bitwarden
+      kdenlive
+      # Other
+      krita
+      blender
+      micromamba
+      lutris
+      heroic
+      mangohud
+      r2modman
+      osu-lazer-bin
+      igir
+      vlc
+      (retroarch.override {
+        cores = with libretro; [
+          dolphin
+          melonds
+          desmume
+          mupen64plus
+          parallel-n64
+          mgba
+          citra
+          ppsspp
+          play
+          swanstation
+          beetle-psx-hw
+        ];
+      })
+    ];
 
     xdg.configFile."MangoHud/MangoHud.conf".source = ./config/MangoHud.conf;
     xdg.configFile."gamemode.ini".source = ./config/gamemode.ini;
@@ -180,21 +173,19 @@
         "joe-rebuild-boot" = "sudo nixos-rebuild boot --upgrade-all";
       };
     };
-    
+
     programs.firefox = {
       enable = true;
       profiles.joe = {
         isDefault = true;
         search = {
-                   default = "DuckDuckGo";
-                   force = true;
-                 };
+          default = "DuckDuckGo";
+          force = true;
+        };
       };
     };
-    
-    programs.chromium = {
-      enable = true;
-    };
+
+    programs.chromium = { enable = true; };
 
     services.kdeconnect = {
       enable = true;
@@ -211,15 +202,13 @@
       gitCredentialHelper.enable = true;
     };
 
-    services.easyeffects = {
-      enable = true;
-    };
+    services.easyeffects = { enable = true; };
 
     programs.obs-studio = {
       enable = true;
-      plugins = [];
+      plugins = [ ];
     };
-    
+
     programs.texlive = {
       enable = true;
       extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
@@ -228,8 +217,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  ];
+  environment.systemPackages = with pkgs; [ ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -263,11 +251,7 @@
     localNetworkGameTransfers.openFirewall = true;
     gamescopeSession.enable = true;
     extest.enable = true;
-    package = pkgs.steam.override {
-      extraEnv = {
-        MANGOHUD = true;
-      };
-    };
+    package = pkgs.steam.override { extraEnv = { MANGOHUD = true; }; };
   };
   hardware.steam-hardware.enable = true;
 
@@ -282,24 +266,28 @@
   };
 
   networking.firewall = {
-   enable = true;
-   # if packets are still dropped, they will show up in dmesg
-   logReversePathDrops = true;
-   # wireguard trips rpfilter up
-   extraCommands = ''
-     ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN
-     ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN
-   '';
-   extraStopCommands = ''
-     ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN || true
-     ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN || true
-   '';
-   allowedTCPPortRanges = [
-     { from = 1714; to = 1764; } # kdeconnect
-   ];
-   allowedUDPPortRanges = [
-     { from = 1714; to = 1764; } # kdeconnect
-   ];
+    enable = true;
+    # if packets are still dropped, they will show up in dmesg
+    logReversePathDrops = true;
+    # wireguard trips rpfilter up
+    extraCommands = ''
+      ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN
+      ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN
+    '';
+    extraStopCommands = ''
+      ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN || true
+      ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN || true
+    '';
+    allowedTCPPortRanges = [{
+      from = 1714;
+      to = 1764;
+    } # kdeconnect
+      ];
+    allowedUDPPortRanges = [{
+      from = 1714;
+      to = 1764;
+    } # kdeconnect
+      ];
   };
 
   programs.virt-manager.enable = true;
@@ -314,13 +302,11 @@
   virtualisation.waydroid.enable = true;
 
   xdg.portal.enable = true;
-  services.xserver.desktopManager.retroarch = {
-    enable = true;
-  };
+  services.xserver.desktopManager.retroarch = { enable = true; };
   nix.settings.auto-optimise-store = true;
   system.autoUpgrade = {
     enable = true;
     operation = "boot";
-    flags = ["--upgrade-all"];
+    flags = [ "--upgrade-all" ];
   };
 }

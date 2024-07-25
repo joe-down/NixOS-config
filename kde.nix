@@ -8,26 +8,26 @@
   };
 
   services.desktopManager.plasma6.enable = true;
-  
+
   home-manager.users.joe = { pkgs, ... }: {
-    home.packages = with pkgs ; [
-                      kate
-                      yakuake
-                      kile
-                      qpwgraph
-                      sddm-kcm
-                      kmail
-                      kcalc
-                      filelight
-                      ksystemlog
-                      kompare
-                      ktorrent
-                      kget
-                      kile
-                      discover
-                      aspellDicts.en
-                      aspellDicts.en-computers
-                      xwaylandvideobridge
-                    ];
+    home.packages = with pkgs; [
+      kate
+      yakuake
+      kile
+      qpwgraph
+      sddm-kcm
+      kmail
+      kcalc
+      filelight
+      ksystemlog
+      kompare
+      ktorrent
+      kget
+      kile
+      discover
+      aspellDicts.en
+      aspellDicts.en-computers
+      xwaylandvideobridge
+    ];
   };
 }
