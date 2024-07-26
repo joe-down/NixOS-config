@@ -135,6 +135,7 @@
         (python-pkgs: [ python-pkgs.numpy python-pkgs.cupy python-pkgs.torch ]))
       bitwarden
       kdenlive
+      nixfmt-classic
       # Other
       krita
       blender
