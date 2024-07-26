@@ -8,6 +8,7 @@
     ./common.nix
     ./gnome.nix
   ];
+  fileSystems = { "/".options = [ "compress=zstd" "discard=async" ]; };
   swapDevices = [{ device = "/swap/swapfile"; }];
   networking.hostName = "joe-laptop";
 }
