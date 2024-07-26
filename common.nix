@@ -21,6 +21,7 @@
       "osu-lazer-bin"
       "blender"
       "xow_dongle-firmware"
+      "libfprint-2-tod1-goodix"
       # cuda
       "cuda_cudart"
       "cuda_cccl"
