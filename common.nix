@@ -136,6 +136,9 @@
       bitwarden
       kdenlive
       nixfmt-classic
+      cmake
+      gnumake
+      gcc
       # Other
       krita
       blender
@@ -253,7 +256,6 @@
     localNetworkGameTransfers.openFirewall = true;
     gamescopeSession.enable = true;
     extest.enable = true;
-    package = pkgs.steam.override { extraEnv = { MANGOHUD = true; }; };
   };
   hardware.steam-hardware.enable = true;
 
@@ -306,9 +308,4 @@
   xdg.portal.enable = true;
   services.xserver.desktopManager.retroarch = { enable = true; };
   nix.settings.auto-optimise-store = true;
-  system.autoUpgrade = {
-    enable = true;
-    operation = "boot";
-    flags = [ "--upgrade-all" ];
-  };
 }
