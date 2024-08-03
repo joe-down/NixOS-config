@@ -3,7 +3,7 @@
 {
   imports = [ ./common.nix ./kde.nix ./amd_cpu.nix ./nvidia.nix ];
 
-  networking.hostName = "joe-desktop"; # Define your hostname.
+  networking.hostName = "joe-desktop";
 
   fileSystems = {
     "/".options = [ "compress=zstd" "discard=async" ];
