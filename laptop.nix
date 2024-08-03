@@ -1,5 +1,3 @@
-{ config, pkgs, lib, ... }:
-
 {
   imports = [
     <nixos-hardware/dell/xps/15-9500/nvidia>

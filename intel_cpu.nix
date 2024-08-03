@@ -1,6 +1,1 @@
-{ config, pkgs, lib, ... }:
-
-{
-  hardware.cpu.intel.updateMicrocode = true;
-}
-
+{ hardware.cpu.intel.updateMicrocode = true; }

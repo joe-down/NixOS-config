@@ -1,5 +1,3 @@
-{ config, pkgs, lib, ... }:
-
 {
   imports = [ ./common.nix ./kde.nix ./amd_cpu.nix ./nvidia.nix ];
 

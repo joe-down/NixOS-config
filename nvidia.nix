@@ -1,7 +1,5 @@
-{ config, pkgs, lib, ... }:
-
 {
-  nixpkgs.config.cudaSupport = true;
+  nixpkgs.config.cudaSupport = false;
   nix.settings = {
     substituters = [ "https://cuda-maintainers.cachix.org" ];
     trusted-public-keys = [

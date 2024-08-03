@@ -1,6 +1,4 @@
-{ config, pkgs, lib, ... }:
-
-{
+{ config, pkgs, lib, ... }: {
   imports = [ ../hardware-configuration.nix <home-manager/nixos> ];
 
   nixpkgs.config.allowUnfreePredicate = pkg:
