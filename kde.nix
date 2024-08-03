@@ -14,7 +14,6 @@
       kate
       yakuake
       kile
-      qpwgraph
       sddm-kcm
       kmail
       kcalc

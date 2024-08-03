@@ -29,6 +29,12 @@
 
   swapDevices = [{ device = "/swap/swapfile"; }];
 
+  services.pipewire.extraConfig.pipewire = {
+    "10-clock-rate" = {
+      "context.properties" = { "default.clock.rate" = 192000; };
+    };
+  };
+
   services.hardware.openrgb = {
     enable = true;
     motherboard = "amd";
@@ -43,11 +49,8 @@
       ./config/autostart/discord.desktop;
     xdg.configFile."autostart/steam.desktop".source =
       ./config/autostart/steam.desktop;
-    xdg.configFile."autostart/qpwgraph.desktop".source =
-      ./config/autostart/qpwgraph.desktop;
     xdg.configFile."autostart/openrgb.desktop".source =
       ./config/autostart/openrgb.desktop;
-    xdg.configFile."patchbay.qpwgraph".source = ./config/patchbay.qpwgraph;
     programs.bash = {
       shellAliases = {
         "joe-import-roms" =
