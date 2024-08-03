@@ -9,21 +9,7 @@
     "/mnt/hdd".options = [ "compress=zstd" ];
   };
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
   hardware.xone.enable = true;
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    nvidiaSettings = true;
-    open = true;
-    nvidiaPersistenced = true;
-  };
 
   swapDevices = [{ device = "/swap/swapfile"; }];
 
