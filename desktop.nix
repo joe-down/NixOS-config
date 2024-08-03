@@ -11,8 +11,6 @@
     "/mnt/hdd".options = [ "compress=zstd" ];
   };
 
-  hardware.alsa.enablePersistence = true;
-
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -37,7 +35,6 @@
   };
 
   programs.dconf.enable = true;
-  #services.flatpak.enable = true;
 
   home-manager.users.joe = { pkgs, ... }: {
     xdg.configFile."autostart/spotify.desktop".source =
