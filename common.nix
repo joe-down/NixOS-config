@@ -139,6 +139,7 @@
       cmake
       gnumake
       gcc
+      alsa-utils
       # Other
       krita
       blender
