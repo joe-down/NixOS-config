@@ -14,6 +14,14 @@
 
   programs.dconf.enable = true;
 
+  systemd.user.services."loopback-line-in" = {
+    script =
+      "/run/current-system/sw/bin/pw-loopback --capture=alsa_input.usb-Generic_USB_Audio-00.HiFi__Line1__source";
+    wantedBy = [ "pipewire.service" ];
+    partOf = [ "pipewire.service" ];
+    after = [ "easyeffects.service" ];
+  };
+
   services = {
     pipewire.extraConfig.pipewire = {
       "10-clock-rate" = {
