@@ -16,7 +16,7 @@
 
   systemd.user.services."loopback-line-in" = {
     script =
-      "/run/current-system/sw/bin/pw-loopback --capture=alsa_input.usb-Generic_USB_Audio-00.HiFi__Line1__source";
+      "/run/current-system/sw/bin/pw-loopback --capture=alsa_input.usb-Generic_USB_Audio-00.HiFi_7_1__Line1__source";
     wantedBy = [ "pipewire.service" ];
     partOf = [ "pipewire.service" ];
     after = [ "easyeffects.service" ];
