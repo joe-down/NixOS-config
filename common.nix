@@ -66,6 +66,7 @@
     gamemode = {
       enable = true;
       enableRenice = true;
+      settings = { general = { renice = 20; }; };
     };
   };
 
@@ -121,11 +122,6 @@
     ];
 
   home-manager.users.joe = { pkgs, ... }: {
-    xdg.configFile = {
-      "MangoHud/MangoHud.conf".source = ./config/MangoHud.conf;
-      "gamemode.ini".source = ./config/gamemode.ini;
-    };
-
     services = {
       kdeconnect = {
         enable = true;
@@ -159,6 +155,11 @@
         enable = true;
         extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
       };
+      mangohud = {
+        enable = true;
+        enableSessionWide = true;
+        settings = { gamemode = true; };
+      };
     };
 
     home.packages = with pkgs; [
@@ -183,10 +184,8 @@
       alsa-utils
       krita
       blender
-      micromamba
       lutris
       heroic
-      mangohud
       r2modman
       osu-lazer-bin
       igir
