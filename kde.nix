@@ -8,22 +8,21 @@
 
   home-manager.users.joe = { pkgs, ... }: {
     home.packages = with pkgs; [
-      kate
-      yakuake
+      kdePackages.kate
+      kdePackages.yakuake
+      kdePackages.sddm-kcm
+      kdePackages.kmail
+      kdePackages.kcalc
+      kdePackages.filelight
+      kdePackages.ksystemlog
+      #kdePackages.kompare
+      kdePackages.ktorrent
+      kdePackages.kget
+      kdePackages.discover
       kile
-      sddm-kcm
-      kmail
-      kcalc
-      filelight
-      ksystemlog
-      kompare
-      ktorrent
-      kget
-      kile
-      discover
       aspellDicts.en
       aspellDicts.en-computers
-      xwaylandvideobridge
+      #xwaylandvideobridge
     ];
   };
 }
