@@ -11,8 +11,11 @@
       nvidiaPersistenced = true;
     };
   };
+
   services.xserver.videoDrivers = [ "nvidia" ];
+
   nixpkgs.config.cudaSupport = false;
+
   nix.settings = {
     substituters = [ "https://cuda-maintainers.cachix.org" ];
     trusted-public-keys = [
