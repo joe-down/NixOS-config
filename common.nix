@@ -161,7 +161,14 @@
       mangohud = {
         enable = true;
         enableSessionWide = true;
-        settings = { gamemode = true; };
+        settings = {
+          gamemode = true;
+          ram = true;
+          vram = true;
+          show_fps_limit = true;
+          swap = true;
+          time = true;
+        };
       };
     };
 
