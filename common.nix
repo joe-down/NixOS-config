@@ -1,7 +1,10 @@
 { config, pkgs, lib, ... }: {
   imports = [ ./core.nix ];
 
-  boot.plymouth.enable = true;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_zen;
+    plymouth.enable = true;
+  };
 
   security.rtkit.enable = true;
 

@@ -50,6 +50,7 @@
 
   home-manager = {
     useGlobalPkgs = true;
+    useUserPackages = true;
     users.joe = { pkgs, ... }: {
       programs = {
         git = {

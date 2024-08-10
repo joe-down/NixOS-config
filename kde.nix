@@ -22,7 +22,7 @@
       kile
       aspellDicts.en
       aspellDicts.en-computers
-      #xwaylandvideobridge
+      xwaylandvideobridge
     ];
   };
 }
