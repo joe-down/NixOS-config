@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [
     <nixos-hardware/dell/xps/15-9500/nvidia>
     ./nvidia.nix
@@ -16,4 +16,12 @@
     };
   };
   networking.hostName = "joe-laptop";
+  services.pipewire.wireplumber.extraConfig = {
+    "10-disable-camera" = {
+      "wireplumber.profiles" = {
+        main = { "monitor.libcamera" = "disabled"; };
+      };
+    };
+  };
+  powerManagement.powertop.enable = true;
 }

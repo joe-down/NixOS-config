@@ -9,6 +9,10 @@
       nvidiaSettings = true;
       open = true;
       nvidiaPersistenced = true;
+      powerManagement = {
+        enable = true;
+        finegrained = true;
+      };
     };
   };
 
