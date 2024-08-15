@@ -24,4 +24,5 @@
     };
   };
   powerManagement.powertop.enable = true;
+  hardware.nvidia.powerManagement.finegrained = true;
 }

@@ -184,7 +184,7 @@
       gimp
       godot_4
       (pkgs.python3.withPackages
-        (python-pkgs: [ python-pkgs.numpy python-pkgs.cupy python-pkgs.torch ]))
+        (python-pkgs: [ python-pkgs.numpy python-pkgs.torch ]))
       bitwarden
       kdenlive
       nixfmt-classic
