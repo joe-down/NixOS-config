@@ -16,6 +16,7 @@
     };
   };
   networking.hostName = "joe-laptop";
+  services.thermald.enable = true;
   services.pipewire.wireplumber.extraConfig = {
     "10-disable-camera" = {
       "wireplumber.profiles" = {
