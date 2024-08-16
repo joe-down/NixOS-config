@@ -198,6 +198,7 @@
       heroic
       r2modman
       osu-lazer-bin
+      gzdoom
       igir
       vlc
       (retroarch.override {
