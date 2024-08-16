@@ -1,5 +1,5 @@
 {
-  imports = [ ./common.nix ./kde.nix ./amd_cpu.nix ./nvidia.nix ];
+  imports = [ ./common.nix ./kde.nix ./amd_cpu.nix ./nvidia-desktop.nix ];
 
   fileSystems = {
     "/".options = [ "compress=zstd" "discard=async" ];

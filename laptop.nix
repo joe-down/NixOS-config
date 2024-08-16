@@ -1,7 +1,9 @@
 { pkgs, ... }: {
   imports = [
-    <nixos-hardware/dell/xps/15-9500/nvidia>
-    ./nvidia.nix
+    "${
+      builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }
+    }/dell/xps/15-9500/nvidia"
+    ./nvidia-laptop.nix
     ./intel_cpu.nix
     ./common.nix
     ./gnome.nix
@@ -25,5 +27,4 @@
     };
   };
   powerManagement.powertop.enable = true;
-  hardware.nvidia.powerManagement.finegrained = true;
 }
