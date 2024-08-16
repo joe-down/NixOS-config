@@ -168,6 +168,7 @@
           show_fps_limit = true;
           swap = true;
           time = true;
+          no_display = true;
         };
       };
     };
@@ -199,6 +200,7 @@
       r2modman
       osu-lazer-bin
       gzdoom
+      qzdl
       igir
       vlc
       (retroarch.override {
