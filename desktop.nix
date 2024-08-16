@@ -51,6 +51,9 @@
       "autostart/discord.desktop".source = ./config/autostart/discord.desktop;
       "autostart/steam.desktop".source = ./config/autostart/steam.desktop;
       "autostart/openrgb.desktop".source = ./config/autostart/openrgb.desktop;
+      "gzdoom/gzdoom.ini".text = ''
+        [IWADSearch.Directories]
+        Path=/mnt/hdd/steam/steamapps/common/Ultimate Doom/rerelease/'';
     };
     programs = {
       bash.shellAliases = {
