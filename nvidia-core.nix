@@ -7,7 +7,6 @@
     nvidia = {
       modesetting.enable = true;
       nvidiaSettings = true;
-      open = true;
       nvidiaPersistenced = true;
       powerManagement.enable = true;
     };

@@ -169,6 +169,7 @@
           swap = true;
           time = true;
           no_display = true;
+          gpu_name = true;
         };
       };
     };
