@@ -2,6 +2,7 @@
   hardware = {
     opengl = {
       enable = true;
+      driSupport = true;
       driSupport32Bit = true;
     };
     nvidia = {
@@ -11,6 +12,8 @@
       powerManagement.enable = true;
     };
   };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   nixpkgs.config.cudaSupport = false;
 

@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./common.nix ./kde.nix ./amd_cpu.nix ./nvidia-desktop.nix ];
+  imports = [ ./common.nix ./kde.nix ./amd_cpu.nix ./nvidia-core.nix ];
 
   fileSystems = {
     "/".options = [ "compress=zstd" "discard=async" ];
