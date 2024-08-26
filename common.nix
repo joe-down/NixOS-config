@@ -2,7 +2,7 @@
   imports = [ ./core.nix ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    #kernelPackages = pkgs.linuxPackages_zen;
     plymouth.enable = true;
   };
 
@@ -99,6 +99,7 @@
       "clion"
       "webstorm"
       "idea-ultimate"
+      "rider"
       "minecraft-launcher"
       "osu-lazer-bin"
       "blender"
@@ -181,9 +182,11 @@
       jetbrains.clion
       jetbrains.webstorm
       jetbrains.idea-ultimate
+      jetbrains.rider
       bottles
       #minecraft
       gimp
+      libresprite
       godot_4
       (pkgs.python3.withPackages
         (python-pkgs: [ python-pkgs.numpy python-pkgs.torch ]))
@@ -195,6 +198,7 @@
       gcc
       alsa-utils
       krita
+      inkscape-with-extensions
       blender
       lutris
       heroic
