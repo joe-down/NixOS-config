@@ -100,6 +100,8 @@
       "webstorm"
       "idea-ultimate"
       "rider"
+      "goland"
+      "rust-rover"
       "minecraft-launcher"
       "osu-lazer-bin"
       "blender"
@@ -183,6 +185,8 @@
       jetbrains.webstorm
       jetbrains.idea-ultimate
       jetbrains.rider
+      jetbrains.goland
+      jetbrains.rust-rover
       bottles
       #minecraft
       gimp
