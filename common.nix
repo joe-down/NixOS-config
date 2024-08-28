@@ -194,6 +194,9 @@
       godot_4
       (pkgs.python3.withPackages
         (python-pkgs: [ python-pkgs.numpy python-pkgs.torch ]))
+      go
+      rustc
+      cargo
       bitwarden
       kdenlive
       nixfmt-classic
