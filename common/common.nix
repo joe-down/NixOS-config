@@ -141,8 +141,11 @@
         enable = true;
         shellAliases = {
           "joe-raspberrypi" = "ssh joe@joe-raspberrypi.local";
-          "joe-rebuild-switch" = "sudo nixos-rebuild switch --upgrade-all";
-          "joe-rebuild-boot" = "sudo nixos-rebuild boot --upgrade-all";
+          "joe-pull-nixos-repo" = "sudo git -C /etc/nixos pull";
+          "joe-rebuild-switch" =
+            "joe-pull-nixos-repo && sudo nixos-rebuild switch --upgrade-all";
+          "joe-rebuild-boot" =
+            "joe-pull-nixos-repo && sudo nixos-rebuild boot --upgrade-all";
         };
       };
       firefox = {
