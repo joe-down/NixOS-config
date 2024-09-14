@@ -1,9 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    "${
-      builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }
-    }/dell/xps/15-9500/nvidia"
-    ../hardware/nvidia-laptop.nix
+    ./nvidia-laptop.nix
     ../hardware/intel_cpu.nix
     ../common/common.nix
     ../gnome/gnome.nix

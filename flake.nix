@@ -11,9 +11,11 @@
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, ... }:
+  outputs = { self, nixpkgs, home-manager, lanzaboote, nixos-hardware, ... }:
     let
       secureBoot = [
         lanzaboote.nixosModules.lanzaboote
@@ -38,8 +40,10 @@
       nixosConfigurations = {
         joe-desktop =
           defaultConfig ([ ./desktop/configuration.nix ] ++ secureBoot);
-        joe-laptop =
-          defaultConfig ([ ./laptop/configuration.nix ] ++ secureBoot);
+        joe-laptop = defaultConfig ([
+          ./laptop/configuration.nix
+          nixos-hardware.nixosModules.dell-xps-15-9500-nvidia
+        ] ++ secureBoot);
       };
     };
 }
