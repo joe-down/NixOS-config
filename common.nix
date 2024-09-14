@@ -188,7 +188,7 @@
       jetbrains.goland
       jetbrains.rust-rover
       bottles
-      #minecraft
+      prismlauncher
       gimp
       libresprite
       godot_4
