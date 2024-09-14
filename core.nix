@@ -40,8 +40,10 @@
     };
   };
 
-  nix.settings.auto-optimise-store = true;
-
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true;
+  };
   users.users.joe = {
     isNormalUser = true;
     description = "Joe";
