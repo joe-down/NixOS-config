@@ -1,5 +1,5 @@
 {
-  imports = [ ./nvidia-core.nix ];
+  imports = [ ../hardware/nvidia-core.nix ];
 
   hardware.nvidia.powerManagement.finegrained = true;
 }

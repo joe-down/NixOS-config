@@ -3,10 +3,10 @@
     "${
       builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }
     }/dell/xps/15-9500/nvidia"
-    ./nvidia-laptop.nix
-    ./intel_cpu.nix
-    ./common.nix
-    ./gnome.nix
+    ../hardware/nvidia-laptop.nix
+    ../hardware/intel_cpu.nix
+    ../common/common.nix
+    ../gnome/gnome.nix
   ];
   fileSystems = { "/".options = [ "compress=zstd" "discard=async" ]; };
   swapDevices = [{ device = "/swap/swapfile"; }];
