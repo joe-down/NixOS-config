@@ -218,6 +218,10 @@
       qzdl
       igir
       vlc
+      cemu
+      ryujinx
+      rpcs3
+      dolphin-emu
       (retroarch.override {
         cores = with libretro; [
           dolphin
