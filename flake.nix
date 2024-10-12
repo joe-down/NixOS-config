@@ -1,6 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -15,7 +16,8 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, nixos-hardware, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, lanzaboote
+    , nixos-hardware, ... }:
     let
       secureBoot = [
         lanzaboote.nixosModules.lanzaboote
@@ -31,10 +33,18 @@
 
       homeManager = [ home-manager.nixosModules.home-manager ];
 
+      nixpkgsUnstableOverlay = [{
+        nixpkgs.overlays = [
+          (final: prev: {
+            unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+          })
+        ];
+      }];
+
       defaultConfig = extraModules:
         nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
-          modules = homeManager ++ extraModules;
+          modules = homeManager ++ nixpkgsUnstableOverlay ++ extraModules;
         };
     in {
       nixosConfigurations = {
