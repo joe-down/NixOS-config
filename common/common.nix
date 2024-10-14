@@ -195,17 +195,9 @@
       gimp
       libresprite
       godot_4
-      (pkgs.python3.withPackages
-        (python-pkgs: [ python-pkgs.numpy python-pkgs.torch ]))
-      go
-      rustc
-      cargo
       bitwarden
       kdenlive
       nixfmt-classic
-      cmake
-      gnumake
-      gcc
       alsa-utils
       krita
       inkscape-with-extensions
@@ -217,11 +209,9 @@
       gzdoom
       qzdl
       igir
-      vlc
       cemu
       ryujinx
       rpcs3
-      dolphin-emu
       (retroarch.override {
         cores = with libretro; [
           dolphin

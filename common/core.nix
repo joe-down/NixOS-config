@@ -37,7 +37,7 @@
       nssmdns6 = true;
     };
   };
-
+  programs.direnv.enable = true;
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
