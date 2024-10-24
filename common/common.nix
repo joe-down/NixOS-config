@@ -15,6 +15,7 @@
       powerOnBoot = true;
     };
     steam-hardware.enable = true;
+    sensor.iio.enable = true;
   };
 
   networking.firewall = {
