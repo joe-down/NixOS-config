@@ -49,6 +49,12 @@
         ROMs = { path = "/mnt/hdd/ROMs/ROMs/"; };
       };
     };
+    sunshine = {
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
   };
 
   home-manager.users.joe = { pkgs, ... }: {
