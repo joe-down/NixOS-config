@@ -195,6 +195,8 @@
       cemu
       ryujinx
       rpcs3
+      ludusavi
+      rclone
       (retroarch.override {
         cores = with libretro; [
           dolphin
