@@ -55,6 +55,7 @@
       pulse.enable = true;
     };
     printing.enable = true;
+    ollama.enable = true;
   };
 
   programs = {
