@@ -4,6 +4,7 @@
   boot = {
     #kernelPackages = pkgs.linuxPackages_zen;
     plymouth.enable = true;
+    crashDump.enable = true;
   };
 
   security.rtkit.enable = true;
@@ -109,6 +110,30 @@
       "blender"
       "xow_dongle-firmware"
       "libfprint-2-tod1-goodix"
+      #cuda
+      "cuda_cudart"
+      "cuda_cccl"
+      "libnpp"
+      "libcublas"
+      "libcufft"
+      "cuda_nvcc"
+      "cuda-merged"
+      "cuda_cuobjdump"
+      "cuda_gdb"
+      "cuda_nvdisasm"
+      "cuda_nvprune"
+      "cuda_cupti"
+      "cuda_cuxxfilt"
+      "cuda_nvml_dev"
+      "cuda_nvrtc"
+      "cuda_nvtx"
+      "cuda_profiler_api"
+      "cuda_sanitizer_api"
+      "libcurand"
+      "libcusolver"
+      "libnvjitlink"
+      "libcusparse"
+      #
     ];
 
   home-manager.users.joe = { pkgs, ... }: {

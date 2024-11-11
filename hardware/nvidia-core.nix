@@ -15,7 +15,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  nixpkgs.config.cudaSupport = false;
+  nixpkgs.config.cudaSupport = true;
 
   nix.settings = {
     substituters = [ "https://nix-community.cachix.org" ];
