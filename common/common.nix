@@ -56,7 +56,10 @@
       pulse.enable = true;
     };
     printing.enable = true;
-    ollama.enable = true;
+    ollama = {
+      enable = true;
+      package = pkgs.unstable.ollama;
+    };
   };
 
   programs = {
