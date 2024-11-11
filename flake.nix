@@ -31,20 +31,28 @@
         })
       ];
 
-      homeManager = [ home-manager.nixosModules.home-manager ];
-
-      nixpkgsUnstableOverlay = [{
-        nixpkgs.overlays = [
-          (final: prev: {
-            unstable = nixpkgs-unstable.legacyPackages.${prev.system};
-          })
-        ];
-      }];
-
       defaultConfig = extraModules:
         nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
-          modules = homeManager ++ nixpkgsUnstableOverlay ++ extraModules;
+          modules = [
+            home-manager.nixosModules.home-manager
+            {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  unstable = import nixpkgs-unstable {
+                    inherit system;
+                    config.allowUnfreePredicate = pkg:
+                      builtins.elem (final.lib.getName pkg) [
+                        "cuda_cudart"
+                        "libcublas"
+                        "cuda_cccl"
+                        "cuda_nvcc"
+                      ];
+                  };
+                })
+              ];
+            }
+          ] ++ extraModules;
         };
     in {
       nixosConfigurations = {
