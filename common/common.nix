@@ -152,9 +152,9 @@
           "joe-raspberrypi" = "ssh joe@joe-raspberrypi.local";
           "joe-pull-nixos-repo" = "sudo git -C /etc/nixos pull";
           "joe-rebuild-switch" =
-            "joe-pull-nixos-repo && sudo nixos-rebuild switch --upgrade-all";
+            "joe-pull-nixos-repo && sudo nixos-rebuild switch --recreate-lock-file";
           "joe-rebuild-boot" =
-            "joe-pull-nixos-repo && sudo nixos-rebuild boot --upgrade-all";
+            "joe-pull-nixos-repo && sudo nixos-rebuild boot --recreate-lock-file";
         };
       };
       firefox = {
@@ -189,55 +189,58 @@
       };
     };
 
-    home.packages = with pkgs; [
-      spotify
-      discord
-      jetbrains.pycharm-professional
-      jetbrains.clion
-      jetbrains.webstorm
-      jetbrains.idea-ultimate
-      jetbrains.rider
-      jetbrains.goland
-      jetbrains.rust-rover
-      bottles
-      prismlauncher
-      gimp
-      libresprite
-      godot_4
-      bitwarden
-      kdenlive
-      nixfmt-classic
-      alsa-utils
-      krita
-      inkscape-with-extensions
-      blender
-      lutris
-      heroic
-      r2modman
-      osu-lazer-bin
-      gzdoom
-      qzdl
-      igir
-      cemu
-      ryujinx
-      rpcs3
-      ludusavi
-      rclone
-      (retroarch.override {
-        cores = with libretro; [
-          dolphin
-          melonds
-          desmume
-          mupen64plus
-          parallel-n64
-          mgba
-          citra
-          ppsspp
-          play
-          swanstation
-          beetle-psx-hw
-        ];
-      })
-    ];
+    home.packages = with {
+      stablePackages = with pkgs; [
+        spotify
+        discord
+        jetbrains.pycharm-professional
+        jetbrains.clion
+        jetbrains.webstorm
+        jetbrains.idea-ultimate
+        jetbrains.rider
+        jetbrains.goland
+        jetbrains.rust-rover
+        bottles
+        prismlauncher
+        gimp
+        libresprite
+        bitwarden
+        kdenlive
+        nixfmt-classic
+        alsa-utils
+        krita
+        inkscape-with-extensions
+        blender
+        lutris
+        heroic
+        r2modman
+        osu-lazer-bin
+        gzdoom
+        qzdl
+        igir
+        cemu
+        ryujinx
+        rpcs3
+        ludusavi
+        rclone
+        (retroarch.override {
+          cores = with libretro; [
+            dolphin
+            melonds
+            desmume
+            mupen64plus
+            parallel-n64
+            mgba
+            citra
+            ppsspp
+            play
+            swanstation
+            beetle-psx-hw
+          ];
+        })
+      ];
+      unstablePackages = with pkgs.unstable; [ godot_4-mono ];
+    };
+      stablePackages ++ unstablePackages;
   };
 }
