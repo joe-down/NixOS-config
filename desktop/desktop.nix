@@ -33,7 +33,7 @@
     samba = {
       enable = true;
       openFirewall = true;
-      shares = {
+      settings = {
         Audiobooks = { path = "/mnt/hdd/Audiobooks/"; };
         Books = { path = "/mnt/hdd/Books/"; };
         Comics = { path = "/mnt/hdd/Comics/"; };

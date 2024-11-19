@@ -10,6 +10,7 @@
 
   hardware = {
     pulseaudio.enable = false;
+    alsa.enablePersistence = true;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -55,10 +56,7 @@
       pulse.enable = true;
     };
     printing.enable = true;
-    ollama = {
-      enable = true;
-      package = pkgs.unstable.ollama;
-    };
+    ollama.enable = true;
   };
 
   programs = {
@@ -114,8 +112,7 @@
       "nvidia-settings"
       "nvidia-persistenced"
       "steam"
-      "steam-original"
-      "steam-run"
+      "steam-unwrapped"
       "spotify"
       "discord"
       "pycharm-professional"
@@ -223,6 +220,7 @@
         bottles
         prismlauncher
         gimp
+        godot_4-mono
         libresprite
         bitwarden
         kdenlive
@@ -259,7 +257,7 @@
           ];
         })
       ];
-      unstablePackages = with pkgs.unstable; [ godot_4-mono ];
+      unstablePackages = with pkgs.unstable; [ ];
     };
       stablePackages ++ unstablePackages;
   };
