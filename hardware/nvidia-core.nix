@@ -18,7 +18,7 @@
     ollama.acceleration = "cuda";
   };
 
-  nixpkgs.config.cudaSupport = true;
+  #nixpkgs.config.cudaSupport = true;
 
   nix.settings = {
     substituters = [ "https://nix-community.cachix.org" ];

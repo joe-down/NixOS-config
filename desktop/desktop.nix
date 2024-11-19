@@ -3,7 +3,7 @@
     ../common/common.nix
     ../kde/kde.nix
     ../hardware/amd_cpu.nix
-    ../hardware/nvidia-core.nix
+    ../hardware/nvidia-core-open.nix
   ];
 
   fileSystems = {
@@ -18,12 +18,6 @@
   hardware.xone.enable = true;
 
   programs.dconf.enable = true;
-
-  systemd.user.services."loopback-line-in" = {
-    script =
-      "/run/current-system/sw/bin/pw-loopback -C alsa_input.usb-Generic_USB_Audio-00.HiFi__hw_Audio_1__source";
-    wantedBy = [ "default.target" ];
-  };
 
   services = {
     pipewire.extraConfig.pipewire = {
