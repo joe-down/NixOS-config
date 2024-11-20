@@ -2,7 +2,7 @@
   imports = [ ./core.nix ];
 
   boot = {
-    #kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_zen;
     plymouth.enable = true;
   };
 
@@ -229,7 +229,6 @@
         krita
         inkscape-with-extensions
         blender
-        lutris
         heroic
         r2modman
         osu-lazer-bin
