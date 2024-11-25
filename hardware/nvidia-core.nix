@@ -8,7 +8,16 @@
       modesetting.enable = true;
       nvidiaSettings = true;
       nvidiaPersistenced = true;
-      powerManagement.enable = true;
+      powerManagement = {
+        enable = true;
+        finegrained = true;
+      };
+      prime = {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+      };
     };
   };
 
@@ -16,9 +25,7 @@
     xserver.videoDrivers = [ "nvidia" ];
     ollama.acceleration = "cuda";
   };
-
-  #nixpkgs.config.cudaSupport = true;
-
+  nixpkgs.config.cudaSupport = true;
   nix.settings = {
     substituters = [ "https://nix-community.cachix.org" ];
     trusted-public-keys = [
