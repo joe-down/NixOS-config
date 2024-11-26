@@ -10,12 +10,12 @@
       nvidiaPersistenced = true;
       powerManagement = {
         enable = true;
-        finegrained = true;
+        #finegrained = true;
       };
       prime = {
         offload = {
-          enable = true;
-          enableOffloadCmd = true;
+          #enable = true;
+          #enableOffloadCmd = true;
         };
       };
     };

@@ -150,6 +150,7 @@
       "libcusolver"
       "libnvjitlink"
       "libcusparse"
+      "cudnn"
       #
     ];
 
