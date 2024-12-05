@@ -2,6 +2,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   programs.evince.enable = true;
+  programs.kdeconnect.package = gnomeExtensions.gsconnect;
 
   home-manager.users.joe = { pkgs, ... }: {
     home.packages = with pkgs; [
@@ -11,7 +12,5 @@
       plots
       gnomeExtensions.appindicator
     ];
-
-    services.kdeconnect = { package = pkgs.gnomeExtensions.gsconnect; };
   };
 }

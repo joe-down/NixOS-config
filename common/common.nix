@@ -57,6 +57,11 @@
     };
     printing.enable = true;
     ollama.enable = true;
+    mullvad-vpn = {
+      enable = true;
+      enableExcludeWrapper = false;
+      package = pkgs.mullvad-vpn;
+    };
   };
 
   programs = {
@@ -74,6 +79,7 @@
       enableRenice = true;
       settings = { general = { renice = 20; }; };
     };
+    kdeconnect.enable = true;
   };
 
   virtualisation = {
@@ -155,13 +161,7 @@
     ];
 
   home-manager.users.joe = { pkgs, ... }: {
-    services = {
-      kdeconnect = {
-        enable = true;
-        indicator = true;
-      };
-      easyeffects.enable = true;
-    };
+    services = { easyeffects.enable = true; };
 
     programs = {
       bash = {
@@ -215,7 +215,7 @@
         jetbrains.clion
         jetbrains.webstorm
         jetbrains.idea-ultimate
-        jetbrains.rider
+        #jetbrains.rider
         jetbrains.goland
         jetbrains.rust-rover
         bottles
