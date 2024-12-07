@@ -1,10 +1,13 @@
 {
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
+  services = {
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+    desktopManager.plasma6.enable = true;
   };
 
-  services.desktopManager.plasma6.enable = true;
+  programs.chromium.enablePlasmaBrowserIntegration = true;
 
   home-manager.users.joe = { pkgs, ... }: {
     home.packages = with pkgs; [

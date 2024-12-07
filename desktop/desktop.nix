@@ -18,6 +18,10 @@
   hardware.xone.enable = true;
 
   programs.dconf.enable = true;
+  programs.bash.shellAliases = {
+    "joe-import-roms" =
+      "igir move zip test clean --dat /mnt/hdd/ROMs/DATs/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
+  };
 
   services = {
     pipewire.extraConfig.pipewire = {
@@ -60,10 +64,6 @@
         Path=/mnt/hdd/steam/steamapps/common/Ultimate Doom/rerelease/'';
     };
     programs = {
-      bash.shellAliases = {
-        "joe-import-roms" =
-          "igir move zip test clean --dat /mnt/hdd/ROMs/DATs/ --input /mnt/hdd/ROMs/ROMs/ --input ./ --output /mnt/hdd/ROMs/ROMs/ --dir-dat-name";
-      };
       beets = {
         enable = true;
         settings = {

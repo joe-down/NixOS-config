@@ -2,7 +2,7 @@
   imports = [ ./core.nix ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    #kernelPackages = pkgs.linuxPackages_zen;
     plymouth.enable = true;
   };
 
@@ -62,6 +62,31 @@
       settings = { general = { renice = 20; }; };
     };
     kdeconnect.enable = true;
+    obs-studio = {
+      enable = true;
+      enableVirtualCamera = true;
+    };
+    chromium = {
+      enable = true;
+      homepageLocation = "https://duckduckgo.com";
+    };
+    bash = {
+      enableLsColors = true;
+      completion.enable = true;
+      shellAliases = {
+        "joe-raspberrypi" = "ssh joe@joe-raspberrypi.local";
+        "joe-pull-nixos-repo" = "sudo git -C /etc/nixos pull";
+        "joe-rebuild-switch" =
+          "joe-pull-nixos-repo && sudo nixos-rebuild switch --recreate-lock-file";
+        "joe-rebuild-boot" =
+          "joe-pull-nixos-repo && sudo nixos-rebuild boot --recreate-lock-file";
+      };
+    };
+    firefox = {
+      enable = true;
+      languagePacks = [ "en-GB" ];
+      preferencesStatus = "locked";
+    };
   };
 
   virtualisation = {
@@ -146,29 +171,6 @@
     services = { easyeffects.enable = true; };
 
     programs = {
-      bash = {
-        enable = true;
-        shellAliases = {
-          "joe-raspberrypi" = "ssh joe@joe-raspberrypi.local";
-          "joe-pull-nixos-repo" = "sudo git -C /etc/nixos pull";
-          "joe-rebuild-switch" =
-            "joe-pull-nixos-repo && sudo nixos-rebuild switch --recreate-lock-file";
-          "joe-rebuild-boot" =
-            "joe-pull-nixos-repo && sudo nixos-rebuild boot --recreate-lock-file";
-        };
-      };
-      firefox = {
-        enable = true;
-        profiles.joe = {
-          isDefault = true;
-          search = {
-            default = "DuckDuckGo";
-            force = true;
-          };
-        };
-      };
-      chromium.enable = true;
-      obs-studio.enable = true;
       texlive = {
         enable = true;
         extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };

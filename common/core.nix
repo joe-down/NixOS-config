@@ -37,7 +37,10 @@
       nssmdns6 = true;
     };
   };
-  programs.direnv.enable = true;
+  programs = {
+    direnv.enable = true;
+    git.enable = true;
+  };
 
   zramSwap.enable = true;
 
@@ -57,7 +60,6 @@
     users.joe = { pkgs, ... }: {
       programs = {
         git = {
-          enable = true;
           userEmail = "30624504+joe-down@users.noreply.github.com";
           userName = "Joe";
         };
