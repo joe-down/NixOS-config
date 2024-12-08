@@ -60,6 +60,7 @@
     users.joe = { pkgs, ... }: {
       programs = {
         git = {
+          enable = true;
           userEmail = "30624504+joe-down@users.noreply.github.com";
           userName = "Joe";
         };
