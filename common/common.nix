@@ -189,6 +189,16 @@
           gpu_name = true;
         };
       };
+      firefox = {
+        enable = true;
+        profiles.joe = {
+          isDefault = true;
+          search = {
+            default = "DuckDuckGo";
+            force = true;
+          };
+        };
+      };
     };
 
     home.packages = with {
