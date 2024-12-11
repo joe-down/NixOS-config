@@ -8,7 +8,7 @@
   fileSystems = { "/".options = [ "compress=zstd" "discard=async" ]; };
   swapDevices = [{ device = "/swap/swapfile"; }];
   services.fprintd = {
-    enable = false;
+    enable = true;
     tod = {
       enable = true;
       driver = pkgs.libfprint-2-tod1-goodix;
