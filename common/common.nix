@@ -217,7 +217,6 @@
         rpcs3
         ludusavi
         rclone
-        clonehero
         (retroarch.override {
           cores = with libretro; [
             dolphin
