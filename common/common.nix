@@ -2,7 +2,7 @@
   imports = [ ./core.nix ];
 
   boot = {
-    #kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_zen;
     plymouth.enable = true;
   };
 
@@ -101,24 +101,6 @@
     waydroid.enable = true;
   };
 
-  systemd = {
-    user.services."ludusavi-backup" = {
-      unitConfig = { Description = "Ludusavi backup"; };
-      serviceConfig = {
-        ExecStart =
-          "/etc/profiles/per-user/joe/bin/ludusavi backup --force --format zip --compression zstd --compression-level 10 --full-limit 1 --differential-limit 0 --cloud-sync";
-      };
-    };
-    user.timers."ludusavi-backup" = {
-      unitConfig = { Description = "Ludusavi backup timer"; };
-      timerConfig = {
-        OnCalendar = "*-*-* 00:00:00";
-        Unit = "ludusavi-backup.service";
-      };
-      wantedBy = [ "timers.target" ];
-    };
-  };
-
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "nvidia-x11"
@@ -190,7 +172,7 @@
         };
       };
       firefox = {
-        enable = true;
+        #enable = true;
         profiles.joe = {
           isDefault = true;
           search = {
