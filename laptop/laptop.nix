@@ -1,10 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    ./nvidia-laptop.nix
-    ../hardware/intel_cpu.nix
-    ../common/common.nix
-    ../gnome/gnome.nix
-  ];
+  imports = [ ./nvidia-laptop.nix ../common/common.nix ../gnome/gnome.nix ];
   fileSystems = { "/".options = [ "compress=zstd" "discard=async" ]; };
   swapDevices = [{ device = "/swap/swapfile"; }];
   services.fprintd = {

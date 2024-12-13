@@ -148,6 +148,55 @@
       "cudnn"
       #
     ];
+  users.users.joe.packages = with pkgs; [
+    spotify
+    discord
+    jetbrains.pycharm-professional
+    jetbrains.clion
+    jetbrains.webstorm
+    jetbrains.idea-ultimate
+    jetbrains.rider
+    jetbrains.goland
+    jetbrains.rust-rover
+    bottles
+    prismlauncher
+    gimp
+    godot_4-mono
+    libresprite
+    bitwarden
+    kdenlive
+    nixfmt-classic
+    alsa-utils
+    krita
+    inkscape-with-extensions
+    blender
+    heroic
+    r2modman
+    osu-lazer-bin
+    gzdoom
+    qzdl
+    igir
+    cemu
+    ryujinx
+    rpcs3
+    ludusavi
+    rclone
+    (retroarch.override {
+      cores = with libretro; [
+        dolphin
+        melonds
+        desmume
+        mupen64plus
+        parallel-n64
+        mgba
+        citra
+        ppsspp
+        play
+        swanstation
+        beetle-psx-hw
+      ];
+    })
+  ];
 
   home-manager.users.joe = { pkgs, ... }: {
     services = { easyeffects.enable = true; };
@@ -171,70 +220,6 @@
           gpu_name = true;
         };
       };
-      firefox = {
-        #enable = true;
-        profiles.joe = {
-          isDefault = true;
-          search = {
-            default = "DuckDuckGo";
-            force = true;
-          };
-        };
-      };
     };
-
-    home.packages = with {
-      stablePackages = with pkgs; [
-        spotify
-        discord
-        jetbrains.pycharm-professional
-        jetbrains.clion
-        jetbrains.webstorm
-        jetbrains.idea-ultimate
-        jetbrains.rider
-        jetbrains.goland
-        jetbrains.rust-rover
-        bottles
-        prismlauncher
-        gimp
-        godot_4-mono
-        libresprite
-        bitwarden
-        kdenlive
-        nixfmt-classic
-        alsa-utils
-        krita
-        inkscape-with-extensions
-        blender
-        heroic
-        r2modman
-        osu-lazer-bin
-        gzdoom
-        qzdl
-        igir
-        cemu
-        ryujinx
-        rpcs3
-        ludusavi
-        rclone
-        (retroarch.override {
-          cores = with libretro; [
-            dolphin
-            melonds
-            desmume
-            mupen64plus
-            parallel-n64
-            mgba
-            citra
-            ppsspp
-            play
-            swanstation
-            beetle-psx-hw
-          ];
-        })
-      ];
-      unstablePackages = with pkgs.unstable; [ ];
-    };
-      stablePackages ++ unstablePackages;
   };
 }

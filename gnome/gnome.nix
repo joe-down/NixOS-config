@@ -6,13 +6,11 @@
   programs.firefox.nativeMessagingHosts.packages =
     [ pkgs.gnomeExtensions.gsconnect ];
 
-  home-manager.users.joe = { pkgs, ... }: {
-    home.packages = with pkgs; [
-      enter-tex
-      gnome-software
-      gnome-tweaks
-      plots
-      gnomeExtensions.appindicator
-    ];
-  };
+  users.users.joe.packages = with pkgs; [
+    enter-tex
+    gnome-software
+    gnome-tweaks
+    plots
+    gnomeExtensions.appindicator
+  ];
 }

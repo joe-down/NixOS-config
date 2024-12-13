@@ -5,6 +5,7 @@
       enable32Bit = true;
     };
     nvidia = {
+      open = true;
       modesetting.enable = true;
       nvidiaSettings = true;
       nvidiaPersistenced = true;

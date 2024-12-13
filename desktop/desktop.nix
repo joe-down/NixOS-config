@@ -1,10 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    ../common/common.nix
-    ../kde/kde.nix
-    ../hardware/amd_cpu.nix
-    ../hardware/nvidia-core-open.nix
-  ];
+  imports = [ ../common/common.nix ../kde/kde.nix ../hardware/nvidia.nix ];
 
   fileSystems = {
     "/".options = [ "compress=zstd" "discard=async" ];
