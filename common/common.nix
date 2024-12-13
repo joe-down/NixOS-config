@@ -191,7 +191,7 @@
         jetbrains.clion
         jetbrains.webstorm
         jetbrains.idea-ultimate
-        #jetbrains.rider
+        jetbrains.rider
         jetbrains.goland
         jetbrains.rust-rover
         bottles
