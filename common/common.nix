@@ -73,14 +73,7 @@
     bash = {
       enableLsColors = true;
       completion.enable = true;
-      shellAliases = {
-        "joe-raspberrypi" = "ssh joe@joe-raspberrypi.local";
-        "joe-pull-nixos-repo" = "sudo git -C /etc/nixos pull";
-        "joe-rebuild-switch" =
-          "joe-pull-nixos-repo && sudo nixos-rebuild switch --recreate-lock-file";
-        "joe-rebuild-boot" =
-          "joe-pull-nixos-repo && sudo nixos-rebuild boot --recreate-lock-file";
-      };
+      shellAliases = { "joe-raspberrypi" = "ssh joe@joe-raspberrypi.local"; };
     };
     firefox = {
       enable = true;
@@ -156,6 +149,7 @@
     jetbrains.webstorm
     jetbrains.idea-ultimate
     jetbrains.rider
+    dotnet-sdk
     jetbrains.goland
     jetbrains.rust-rover
     bottles
