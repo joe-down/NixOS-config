@@ -196,6 +196,7 @@
     services = { easyeffects.enable = true; };
 
     programs = {
+      bash.enable = true;
       texlive = {
         enable = true;
         extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
