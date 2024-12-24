@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ../common/common.nix ../kde/kde.nix ../hardware/nvidia.nix ];
+  imports = [ ../common/common.nix ../kde/kde.nix ./nvidia-desktop.nix ];
 
   fileSystems = {
     "/".options = [ "compress=zstd" "discard=async" ];

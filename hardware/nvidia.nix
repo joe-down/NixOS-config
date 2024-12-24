@@ -9,16 +9,7 @@
       modesetting.enable = true;
       nvidiaSettings = true;
       nvidiaPersistenced = true;
-      powerManagement = {
-        enable = true;
-        #finegrained = true;
-      };
-      prime = {
-        offload = {
-          #enable = true;
-          #enableOffloadCmd = true;
-        };
-      };
+      powerManagement.enable = true;
     };
   };
 
