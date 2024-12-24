@@ -1,6 +1,4 @@
 { lib, ... }: {
-  imports = [ ../hardware/nvidia.nix ];
-
-  hardware.nvidia.powerManagement.finegrained = true;
+  imports = [ ../hardware/nvidia-prime.nix ];
   hardware.nvidia.open = lib.mkForce false;
 }
