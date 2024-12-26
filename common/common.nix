@@ -22,6 +22,8 @@
   networking.firewall = {
     enable = true;
     logReversePathDrops = true;
+    #Hotspot DHCP server
+    allowedUDPPorts = [ 67 ];
   };
 
   services = {
