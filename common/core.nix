@@ -23,7 +23,10 @@
 
   time.timeZone = "Europe/London";
 
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.backend = "iwd";
+  };
 
   services = {
     xserver = {
