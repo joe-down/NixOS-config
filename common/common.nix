@@ -9,7 +9,6 @@
   security.rtkit.enable = true;
 
   hardware = {
-    pulseaudio.enable = false;
     alsa.enablePersistence = true;
     bluetooth = {
       enable = true;
@@ -27,10 +26,7 @@
   };
 
   services = {
-    xserver = {
-      enable = true;
-      desktopManager.retroarch.enable = true;
-    };
+    #xserver.enable = true;
     pipewire = {
       enable = true;
       alsa = {
@@ -38,6 +34,7 @@
         support32Bit = true;
       };
       pulse.enable = true;
+      jack.enable = true;
     };
     printing.enable = true;
     ollama.enable = true;
@@ -55,7 +52,6 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
-      gamescopeSession.enable = true;
       extest.enable = true;
     };
     gamemode = {
@@ -143,6 +139,7 @@
       "cudnn"
       #
     ];
+  environment.systemPackages = with pkgs; [ wl-clipboard ];
   users.users.joe.packages = with pkgs; [
     spotify
     discord

@@ -26,10 +26,7 @@
   networking.networkmanager.enable = true;
 
   services = {
-    xserver = {
-      xkb.layout = "gb";
-      xkb.variant = "";
-    };
+    xserver.xkb.layout = "gb";
     fwupd.enable = true;
     avahi = {
       enable = true;
