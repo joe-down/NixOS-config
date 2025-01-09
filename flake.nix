@@ -14,10 +14,15 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixpkgs-droid.url = "nixpkgs/nixos-24.05";
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs-droid";
+    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, lanzaboote
-    , nixos-hardware, ... }:
+    , nixos-hardware, nixpkgs-droid, nix-on-droid, ... }:
     let
       secureBoot = [
         lanzaboote.nixosModules.lanzaboote
@@ -63,5 +68,14 @@
           nixos-hardware.nixosModules.dell-xps-15-9500-nvidia
         ] ++ secureBoot);
       };
+      nixOnDroidConfigurations.default =
+        nix-on-droid.lib.nixOnDroidConfiguration {
+          pkgs = import nixpkgs-droid {
+            system = "aarch64-linux";
+            config.allowUnfreePredicate = pkg:
+              builtins.elem (nixpkgs-droid.lib.getName pkg) [ ];
+          };
+          modules = [ ./android/android.nix ];
+        };
     };
 }
