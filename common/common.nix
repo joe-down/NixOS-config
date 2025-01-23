@@ -145,6 +145,8 @@
     discord
     jetbrains.pycharm-professional
     jetbrains.clion
+    cmake
+    gcc
     jetbrains.webstorm
     jetbrains.idea-ultimate
     jetbrains.rider
@@ -154,7 +156,7 @@
     bottles
     prismlauncher
     gimp
-    godot_4-mono
+    #godot_4-mono
     libresprite
     bitwarden
     kdenlive
