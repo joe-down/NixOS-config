@@ -19,26 +19,10 @@
   };
 
   services = {
-    pipewire.extraConfig.pipewire = {
-      "10-clock-rate" = {
-        "context.properties" = { "default.clock.rate" = 192000; };
-      };
-    };
     hardware.openrgb = {
       enable = true;
       motherboard = "amd";
       package = pkgs.openrgb-with-all-plugins;
-    };
-    samba = {
-      enable = true;
-      openFirewall = true;
-      settings = {
-        Audiobooks = { path = "/mnt/hdd/Audiobooks/"; };
-        Books = { path = "/mnt/hdd/Books/"; };
-        Comics = { path = "/mnt/hdd/Comics/"; };
-        Music = { path = "/mnt/hdd/Music/Music/"; };
-        ROMs = { path = "/mnt/hdd/ROMs/ROMs/"; };
-      };
     };
     sunshine = {
       enable = true;
@@ -53,16 +37,6 @@
       "gzdoom/gzdoom.ini".text = ''
         [IWADSearch.Directories]
         Path=/mnt/hdd/steam/steamapps/common/Ultimate Doom/rerelease/'';
-    };
-    programs = {
-      beets = {
-        enable = true;
-        settings = {
-          directory = "/mnt/hdd/Music/Music/";
-          library = "/mnt/hdd/Music/Beets/musiclibrary.db";
-          plugins = "chroma fetchart mbsync web";
-        };
-      };
     };
   };
 }
