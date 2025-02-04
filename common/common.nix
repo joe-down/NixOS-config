@@ -176,6 +176,7 @@
     rpcs3
     ludusavi
     rclone
+    libreoffice-still
     (retroarch.override {
       cores = with libretro; [
         dolphin
